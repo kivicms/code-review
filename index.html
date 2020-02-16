@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Методика проведения Code Review</h1>
+
+
+      <h2 id="id-МетодикапроведенияСodeReview-Цели">Цели</h2>
+      <ol>
+        <li>Снижение вероятности возникновения ошибок</li>
+        <li>Погружение программистов в разрабатываемый функционал</li>
+        <li>Предотвращение роста технического долга</li>
+        <li>Соблюдение стандартов оформления кода (Code Style)</li>
+        <li>Повышение качества кода</li>
+      </ol>
+      <h2 id="id-МетодикапроведенияСodeReview-Требованиякпрограммисту,проводящемуСodeReview:">Требования к
+        программисту, проводящему Сode Review:</h2>
+      <ol>
+        <li>Программист, проводящий&nbsp;Сode Review, должен быть Frontend-разработчиком, если назначаемый MR
+          соответствует проектам всей группы jetStyle и проектам: st, ui-react, в иных случаях он должен быть
+          Backend-разработчиком.
+        </li>
+        <li>Программист, проводящий&nbsp;Сode Review, должен соблюдать <strong>правила написания кода</strong>,
+          указанные ниже.
+        </li>
+        <li>Всё, что не указано в&nbsp;<strong>правилах написания кода</strong>&nbsp;по желанию автора кода может
+          быть интерпретировано в его пользу в случае если изменения не наносят вреда проекту в целом.
+        </li>
+        <li>Программист, проводящий&nbsp;Сode Review, вправе сам залить изменения в master, используя <a
+          href="https://kb.ertelecom.ru/pages/viewpage.action?pageId=128472441" rel="nofollow">правила принятия
+          изменений в основную ветку репозитория</a>,&nbsp;если учтены все перечисленные факторы:&nbsp;<ol>
+          <li>есть права на залитие в master-ветку&nbsp;искомого&nbsp;репозитория;</li>
+          <li>в merge-request не более 10 строк измененного кода (считается как добавление, так и удаление
+            строк);
+          </li>
+        </ol>
+        </li>
+        <li>Если программист, проводящий&nbsp;Сode Review, не уверен на 100% соблюдены ли&nbsp;<strong>правила
+          написания кода</strong> в merge-request , то он вправе перевести merge-request на другого программиста в
+          целях повторного проведения&nbsp;Сode Review.
+        </li>
+        <li>После того как программист, проводящий&nbsp;Сode Review, убедится что все&nbsp;<strong>правила
+          написания кода</strong> соблюдены, он должен поставить пометку о том что&nbsp;Сode Review пройдено и
+          уведомить об этом сдающего.
+        </li>
+        <li>В случае если назначенный на программиста Merge Request относится к конструктору страниц, то&nbsp;Сode
+          Review по нему проводить не нужно. Необходимо такой&nbsp;Merge Request залить в master,&nbsp;используя&nbsp;<a
+            href="https://kb.ertelecom.ru/pages/viewpage.action?pageId=128472441" rel="nofollow"
+            style="letter-spacing: 0.0px;">правила принятия изменений в основную ветку репозитория</a><span
+            style="letter-spacing: 0.0px;">&nbsp;при условии&nbsp;есть права на залитие в master-ветку&nbsp;искомого&nbsp;репозитория, в иных случаях переназначить&nbsp;Merge Request на другого программиста, используя требования при&nbsp;<a
+            href="https://kb.ertelecom.ru/pages/viewpage.action?pageId=246680882" rel="nofollow">маршрутизации Merge Request</a>.</span><br><br>
+        </li>
+      </ol>
+      <h2 id="id-МетодикапроведенияСodeReview-Правиланаписаниякода:">Правила написания кода:</h2>
+      <ol>
+        <li>Логика работы кода соответствует тому, что должно быть реализовано в задаче</li>
+        <li>Внешний вид в вёрстке соответствует тому, что представлено на тестовом сервере</li>
+        <li>Оформление кода (Code Style ) соответствует&nbsp;стандарту <a class="external-link"
+                                                                          href="http://www.php-fig.org/psr/psr-2/"
+                                                                          rel="nofollow">PSR-2</a></li>
+        <li>Разработанный функционал соответствует утверждённым стандартам <a class="external-link"
+                                                                              href="https://www.php-fig.org/psr/"
+                                                                              rel="nofollow">PSR</a></li>
+        <li>Для многострочных массивов обязательна завершающая запятая, так как позволяет легче добавлять новые
+          элементы в конец массива. <a class="external-link"
+                                       href="http://php.net/manual/ru/language.types.array.php" rel="nofollow">Для
+            однострочных массивов<em> array(1, 2)</em> предпочтительней<em> array(1, 2,)</em></a></li>
+        <li><p>Строковые константы должны быть обрамлены в одинарные кавычки (в PHP);</p>
+          <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code"
+               style="border-width: 1px;">
+            <div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Пример обрамления
+              строк:</b></div>
+            <div class="codeContent panelContent pdl">
+              <div>
+                <div id="highlighter_194546" class="syntaxhighlighter sh-confluence nogutter  php">
+                  <div class="toolbar"><span><a
+                    href="https://kb.ertelecom.ru/pages/viewpage.action?pageId=127294291#"
+                    class="toolbar_item command_help help"></a></span></div>
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                      <td class="code">
+                        <div class="container" title="Hint: double-click to select code">
+                          <div class="line number1 index0 alt2"><code class="php variable">$fio</code> <code
+                            class="php plain">= </code><code class="php string">'Иванов Иван Иванович'</code><code
+                            class="php plain">;</code></div>
+                          <div class="line number2 index1 alt1"><code class="php variable">$text</code> <code
+                            class="php plain">= </code><code class="php string">"Меня зовут $fio"</code><code
+                            class="php plain">; </code><code class="php comments">//Нет нарушения регламента. Не
+                            является строковой константой, так как значение строки может измениться в ходе
+                            выполнения PHP скрипта. Собственно поэтому она приравнивается имени со знаком $
+                            (переменной).</code></div>
+                          <div class="line number3 index2 alt2"><code class="php variable">$text</code> <code
+                            class="php plain">= </code><code class="php string">'Меня зовут $fio'</code><code
+                            class="php plain">; </code><code class="php comments">//Нет нарушения регламента, но
+                            работать будет не корректно. В строку не подставится переменная $fio. Также в этом
+                            случае строковая константа приравнивается имени со знаком $ (переменной), что
+                            противоречит синтаксису PHP языка.</code></div>
+                          <div class="line number4 index3 alt1"><code class="php variable">$text</code> <code
+                            class="php plain">= </code><code class="php string">"Меня зовут"</code> <code
+                            class="php plain">. </code><code class="php variable">$fio</code><code
+                            class="php plain">; </code><code class="php comments">//Есть нарушение регламента.
+                            Строковая константа, без определенного имени, обрамлена в двойные кавычки. Она будет
+                            проходить лишнюю обработку в ходе выполнения PHP скрипта.</code></div>
+                          <div class="line number5 index4 alt2"><code class="php variable">$text</code> <code
+                            class="php plain">= </code><code class="php string">'Меня зовут'</code> <code
+                            class="php plain">. </code><code class="php variable">$fio</code><code
+                            class="php plain">; </code><code class="php comments">//Нет нарушения
+                            регламента.</code></div>
+                        </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>Отсутствуют ошибки PHP (E_NOTICE и выше), отсутствуют ошибки JS
+          <ol>
+            <li>В местах, где возможно потенциальное возникновение ошибки, необходимо делать проверки. Ошибки
+              писать в лог с уровнем WARNING.
+            </li>
+          </ol>
+        </li>
+        <li>Отсутствует дублирование кода</li>
+        <li>Вёрстка отвечает требованиям <a href="https://kb.ertelecom.ru/pages/viewpage.action?pageId=32739058">Стандарт
+          верстки html-страниц</a></li>
+        <li>Дублирующие функционал страницы удалены</li>
+        <li>На страницах, отображаемых клиенту, работает код Google tag manager</li>
+        <li>Ошибки и исключения записываются в лог, каждая запись минимально включает в себя
+          <ol>
+            <li>дату и время возникновения;</li>
+            <li>стек вызовов;</li>
+            <li>ссылка, по которой был получен неверный по мнению приложения контент и содержимое запроса (если
+              ошибка при запросе в сторонний сервис);
+            </li>
+            <li>достаточную информацию для идентификации пользователя</li>
+          </ol>
+        </li>
+        <li>В затрагиваемых файлах отсутствуют куски комментированного кода</li>
+        <li>В профилировании минимально требуемое количество операций, например
+          <ol>
+            <li>отсутствует старт сессии для анонимов</li>
+          </ol>
+        </li>
+        <li>Доступ выполнению кода есть у минимального возможного круга лиц</li>
+        <li>Используется "тонкий" контроллер, вся бизнес логика вынесена в модель</li>
+        <li>Контроллер не содержит SQL-запросы</li>
+        <li>Контроллер не содержит html и другую разметку</li>
+        <li>Попапы, требующие дополнительного запроса на сервер, необходимо загружать по требованию пользователя
+        </li>
+        <li>Используемый код, константы и методы расположены как можно ближе к вызывающему коду</li>
+        <li>Поля класса и методы имеют минимальную область видимости, требуемую на момент сдачи кода (по умолчанию
+          private), нет <a class="external-link"
+                           href="https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%B6%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82"
+                           rel="nofollow">GOD-переменных</a></li>
+        <li>Пользователю не выводятся значения phpinfo(), $_ENV, других переменных</li>
+        <li>Нет уязвимостей:<br>
+          <ol>
+            <li>присутствует проверка CSRF на формах;</li>
+            <li>все запросы на изменение отправляются методом POST;</li>
+            <li>значения отправляемых пользователем значений очищаются от вредоносного кода (защита от XSS)</li>
+          </ol>
+        </li>
+        <li>Для страниц авторизованного пользователя наличие запрета на индексацию в метатегах</li>
+        <li>Запрос на изменение и комментарий не содержит ошибок языка</li>
+        <li>Запрос на изменение не ухудшает проект в целом (не добавляет дубли кода), рефакторинг
+          приветствуется;
+        </li>
+        <li>Assignments in conditions (присваивания в условиях) запрещены;</li>
+        <li>Операции в условии должны быть заключены в скобки.</li>
+        <li>Для внешних операций запрещается использовать текстовые параметры, которые могут быть изменены
+          (например, название домена). Нужно использовать идентификаторы.
+        </li>
+        <li>Форма, отправляющая на сервер данные, должна быть оформлена при помощи модели. Логика проверок JS
+          должна дублироваться на стороне сервера (желательно использовать встроенный механизм валидации форм
+          Yii).
+        </li>
+        <li>Согласно <a class="external-link" href="https://tools.ietf.org/html/rfc2616" rel="nofollow">RFC
+          2616</a> метод POST должен быть использован для любого контекста, в котором запрос не <a
+          class="external-link"
+          href="https://ru.wikipedia.org/wiki/%D0%98%D0%B4%D0%B5%D0%BC%D0%BF%D0%BE%D1%82%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C"
+          rel="nofollow" title="Идемпотентность">идемпотентен</a>: то есть, он вызывает изменение состояния
+          сервера каждый раз при выполнении, такие как отправка комментария к сообщению в блоге или
+          интернет-голосование. Метод GET для идемпотентных действий и для нульпотентных, то есть без побочных
+          эффектов (в отличие от «без побочных эффектов при втором и последующих запросах» как с идемпотентными
+          операциями).
+        </li>
+        <li>Процент покрытия кода тестами не меньше, чем в текущем master (в gitlab раздел builds, сравниваем
+          coverage последнего билда с master).
+        </li>
+        <li>Веб-страница содержит защиту от 5xx при любых входных данных.</li>
+      </ol>
+      <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code"
+           style="border-width: 1px;">
+        <div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Пример корректного приёма
+          данных на сервер при запросе на изменение</b></div>
+        <div class="codeContent panelContent pdl">
+          <div>
+            <div id="highlighter_115199" class="syntaxhighlighter sh-confluence nogutter  php">
+              <div class="toolbar"><span><a href="https://kb.ertelecom.ru/pages/viewpage.action?pageId=127294291#"
+                                            class="toolbar_item command_help help"></a></span></div>
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                  <td class="code">
+                    <div class="container" title="Hint: double-click to select code">
+                      <div class="line number1 index0 alt2"><code class="php variable">$model</code> <code
+                        class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">Feedback();</code>
+                      </div>
+                      <div class="line number2 index1 alt1">&nbsp;</div>
+                      <div class="line number3 index2 alt2"><code class="php keyword">if</code> <code
+                        class="php plain">(</code><code class="php variable">$model</code><code class="php plain">-&gt;load(Yii::</code><code
+                        class="php variable">$app</code><code class="php plain">-&gt;request-&gt;post())
+                        &amp;&amp; </code><code
+                        class="php variable">$model</code><code class="php plain">-&gt;validate()) {</code></div>
+                      <div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                        class="php variable">$sendStatus</code> <code class="php plain">= </code><code
+                        class="php variable">$model</code><code class="php plain">-&gt;save();</code></div>
+                      <div class="line number5 index4 alt2"><code class="php plain">}</code></div>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>&nbsp;34. Миграции добавлены корректно: добавлены новые файлы миграций, а не отредактированы старые.</p>
+      <p>35. Код не содержит бесконечных циклов (даже потенциальных).</p>
+      <p>36. Вызов API должен быть независим. Не доступность одного API не должно блокировать вызов другого
+        API&nbsp;</p>
+      <ul>
+        <li>Не группировать все параметры в один запрос кроме параметров которые зависят друг от друга;</li>
+        <li>Отсутствуют последовательные запросы длительностью &gt; 0,1 сек. - открываем в отладчике Yii
+          изменяемый action и проверяем;
+        </li>
+        <li>Обрабатывать результаты каждого запроса на наличие данных, корректность.</li>
+      </ul>
+      <p>37. Перед использованием переменных проверить на ее существование.</p>
+      <p>38. Максимальная длина строки 120 символов</p>
+      <p>39. После приведения типа переменной обязателен пробел перед переменной. Например: (array) $array</p>
+      <p>40. В вызовах функций у которых много параметров и строка более 120 символов каждый параметр (включая
+        первый) с новой строки. Закрывающая скобка ); также на новой строке.</p>
+      <h3 id="id-МетодикапроведенияСodeReview-SQL-запросы">SQL-запросы</h3>
+      <ol>
+        <li>Использование ActiveRecord на ресурсах с проектируемой нагрузкой (Request per minute &gt; 50)
+          запрещено.
+        </li>
+        <li><span class="inline-comment-marker valid" data-ref="6c247ddd-096b-4e21-89b8-0ea02999188c">Если в запросе используются Where, на поля фильтра должны быть повешаны индексы</span>
+        </li>
+        <li>Запросы должны быть параметризованы, чтобы использовать кеш движка СУБД вместо повторного анализа
+          структуры запроса
+        </li>
+        <li>В новых таблицах</li>
+      </ol>
+      <h3 id="id-МетодикапроведенияСodeReview-Базыданных">Базы данных</h3>
+      <ol>
+        <li>Минимальная размерность поля для хранения AUTO_INCREMENT данных bigint(20) unsigned.</li>
+      </ol>
+
+
+      <h3 class="auto-cursor-target" id="id-МетодикапроведенияСodeReview-Обработкаисключений">Обработка
+        исключений</h3>
+      <p>Обязательно логировать ошибки, которые происходят в приложении. Пример логирования:</p>
+
+      <pre>
+        try {
+          //Код, который вызывает исключение
+        } catch (\Exception $exc) {
+          Yii::warning($exc->getMessage(), __METHOD__);
+        }
+      </pre>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
